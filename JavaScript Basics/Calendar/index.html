@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Stuff</title>
+  <style>
+    .empty {
+      background-color: grey;
+    }
+
+    .today {
+      background-color: pink;
+    }
+
+    .anyday {
+      background-color: lightblue;
+    }
+
+    table,
+    th,
+    td {
+      border-collapse: collapse;
+      border: 3px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="calendar.js"></script>
+  <table>
+    <thead>
+      <tr>
+        <td>Sunday</td>
+        <td>Monday</td>
+        <td>Tuesday</td>
+        <td>Wednesday</td>
+        <td>Thursday</td>
+        <td>Friday</td>
+        <td>Saturday</td>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <script>
+        var daysInMonth;
+        var firstDayOfMonth;
+        daysInMonth = window.prompt("How many days are in the month?");
+        firstDayOfMonth = window.prompt("What is the first day of the month?");
+        renderCalendar(daysInMonth, firstDayOfMonth);
+      </script>
+    </tbody>
+  </table>
+</body>
+
+</html>
