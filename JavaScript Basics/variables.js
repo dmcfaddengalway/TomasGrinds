@@ -32,8 +32,8 @@ function discountPrices(prices, discount) {
 }
 
 // 3: Const
-// Const is shrot for constant, block scoped like let
-// Should ot be reassigned, takes on one value and thats it. Usually all caps for readibility
+// Const is short for constant, block scoped like let
+// Should not be reassigned, takes on one value and thats' it.
 let name = 'Tyler'
 const handle = 'tylermcginnis'
 
