@@ -53,5 +53,5 @@ person = {
 
 // Bottom Line:
 // Always use const unless you know the value is going to change
-// Use lets as much as you can over var
+// Use lets as much as you can over var, youll likely not see var in industry
 
