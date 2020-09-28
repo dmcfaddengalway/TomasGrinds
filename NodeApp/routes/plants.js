@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
-router.get('/', (req, res) => {
-  res.send('index', { title: 'Express' });
+/* GET plants page. */
+router.get('/plants', (req, res) => {
+  res.render('plants');
 });
 
 module.exports = router;
