@@ -46,3 +46,5 @@ let newMark = marksOfTests.reduce(function(totalMarks, examGrade) {
 console.log(newMark);
 
 // We get the same result if we were to run this. Run > Start Debugging > Node.js (preview)
+
+// Resource: https://javascript.info/arrow-functions-basics
