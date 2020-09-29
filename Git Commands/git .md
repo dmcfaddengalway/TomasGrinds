@@ -13,9 +13,7 @@ This does slightly favour Bitbucket over Github, but its still applicable. It al
 
 ## Difference between git and github
 
-Git is the system, github is the app. The funniest explanation I've ever read is this:
-Git = porn
-GitHub = PornHub
+Git is the system, github is the app.
 
 GitHub is just an application. Alternatives are bitbucket, gitlab and other small ones.
 
