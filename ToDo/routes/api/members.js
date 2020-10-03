@@ -1,7 +1,10 @@
 const express = require('express');
-const uuid = require('uuid');
 const router = express.Router();
 const members = require('../../Members');
+
+const { body, validationResult } = require('express-validator');
+const uuid = require('uuid');
+const randomstring = require("randomstring");
 
 const idFilter = req => member => member.id === parseInt(req.params.id);
 
@@ -20,20 +23,34 @@ router.get('/:id', (req, res) => {
 });
 
 // Create Member
-router.post('/', (req, res) => {
-  const newMember = {
-    ...req.body,
-    id: uuid.v4(),
-    status: 'active'
-  };
+router.post('/', [
+  body('first_name').isString(),
+  body('last_name').isString(),
+  body('gender').isString(),
+  body('email').isEmail(),
+  ],(req, res) => {
+    const randomHash = randomstring.generate(7);
+    const avatarLink = 'https://robohash.org';
+    let avatarHash = avatarLink + '/' + randomHash + '?size=100x100&set=set1';
 
-  if (!newMember.name || !newMember.email) {
-    return res.status(400).json({ msg: 'Please include a name and email' });
-  }
+    const newMember = {
+      ...req.body,
+      id: uuid.v4(),
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      gender: req.body.gender,
+      email: req.body.email,
+      avatar: avatarHash
+    };
 
-  members.push(newMember);
-  res.json(members);
-  // res.redirect('/');
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      console.log(errors);
+      return res.status(400).json({ msg: 'Please check the inputs' });
+    }
+
+    members.push(newMember);
+    res.json(members);
 });
 
 // Update Member
