@@ -19,7 +19,7 @@ make directory -- creates a folder, will need to cd into it after creating
 deletes completely, as in gone gone, not to bin. gone. forever.
 
 ### sudo
-run as an admin, will be used for express and node and npm, try not to use too much
+run as an admin, will be used for express and node and npm, try not to use too much. will have to enter password
 
 ### clear
 clears screen for clean slate, can still scroll up

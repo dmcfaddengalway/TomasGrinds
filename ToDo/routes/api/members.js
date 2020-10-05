@@ -6,13 +6,15 @@ const { body, validationResult } = require('express-validator');
 const uuid = require('uuid');
 const randomstring = require("randomstring");
 
+// req = 1
 const idFilter = req => member => member.id === parseInt(req.params.id);
 
 // Gets All Members
 router.get('/', (req, res) => res.json(members));
 
-// Get Single Member
+// Get Single Member :<name>
 router.get('/:id', (req, res) => {
+  // Were going through all the members (1000) and on the ones where we perform idFilter (above) set found = true
   const found = members.some(idFilter(req));
 
   if (found) {
@@ -33,6 +35,7 @@ router.post('/', [
     const avatarLink = 'https://robohash.org';
     let avatarHash = avatarLink + '/' + randomHash + '?size=100x100&set=set1';
 
+    // POST Requests, JSON, express api for req body
     const newMember = {
       ...req.body,
       id: uuid.v4(),
