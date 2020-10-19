@@ -1,13 +1,11 @@
 const express = require('express');
 const path = require('path');
-const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const exphbs  = require('express-handlebars');
 
 const routes = require('./routes/index');
-const users = require('./routes/user');
 
 const app = express();
 
@@ -22,10 +20,10 @@ app.engine('handlebars', exphbs({
   defaultLayout: 'main',
   partialsDir: ['views/partials/']
 }));
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 
-// app.use(favicon(__dirname + '/public/img/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -35,7 +33,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/api/members', require('./routes/api/members'));
 
 /// catch 404 and forward to error handler
 app.use((req, res, next) => {

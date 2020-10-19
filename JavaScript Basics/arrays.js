@@ -5,6 +5,9 @@
 // 0 indexed [0, 1, 2, 3]
 // Can declare two ways (first is preferred for brevity)
 const dogs = ['Henry', 'Poochy', 'Lady', 'Bugsy'];
+const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const smallerNumbers = [0.1, 0.2, 0.3, 0.4, 0.5];
+const booleanValues = [true, false];
 const cats = new Array('Rude', 'Mean', 'Minerva', 'Evil'); // very rarely will see this
 
 // To access a specific index, we use the variable of our array, then in [], place index

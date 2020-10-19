@@ -10,6 +10,7 @@ const app = express();
 // app.use(logger);
 
 // Handlebars Middleware
+// handlebars, pug, ejs, etc...
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 

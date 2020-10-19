@@ -8,6 +8,16 @@ const randomstring = require("randomstring");
 
 // req = 1
 const idFilter = req => member => member.id === parseInt(req.params.id);
+// // const idFilter = function(req) {
+//     members.forEach(member => {
+//       // check if the member we are looking at has an id eql to the id sent in our URL
+//       if (member.id === parseInt(req.params.id)) {
+//         return true;
+//       } else {
+//         return false;
+//       }
+//     })
+// }
 
 // Gets All Members
 router.get('/', (req, res) => res.json(members));
@@ -30,7 +40,7 @@ router.post('/', [
   body('last_name').isString(),
   body('gender').isString(),
   body('email').isEmail(),
-  ],(req, res) => {
+  ] ,(req, res) => {
     const randomHash = randomstring.generate(7);
     const avatarLink = 'https://robohash.org';
     let avatarHash = avatarLink + '/' + randomHash + '?size=100x100&set=set1';
@@ -63,9 +73,11 @@ router.put('/:id', (req, res) => {
   if (found) {
     members.forEach((member, i) => {
       if (idFilter(req)(member)) {
-
+        // create the updated member
         const updMember = {...member, ...req.body};
+        // overwrite that member with the above ^^
         members[i] = updMember
+
         res.json({ msg: 'Member updated', updMember });
       }
     });
