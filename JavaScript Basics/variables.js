@@ -20,7 +20,7 @@ function discountPrices(prices, discount) {
     let discountedPrice = prices[i] * (1 - discount); // discountedPrice is only accessible inside this for-loop
     discountedPrice = prices[i] * (2 - discount);
     let finalPrice = Math.round(discountedPrice * 100) / 100; // finalPrice is only accessible inside this for-loop
-    discounted.push(finalPrice);
+    discounted.push(finalPrice); // can access discounted though as it is declared outside this for loop
   }
 
   console.log(i); // Error!
@@ -34,11 +34,11 @@ function discountPrices(prices, discount) {
 // 3: Const
 // Const is short for constant, block scoped like let
 // Should not be reassigned, takes on one value and thats' it.
-let name = 'Tyler'
-const handle = 'tylermcginnis'
+let name = 'Tyler';
+const handle = 'tylermcginnis'; // const has to be initialised when declared
 
 name = 'Tyler McGinnis' // A-ok
-handle = '@tylermcginnis' // can not reassign a const value
+handle = '@tylermcginnis' // can NOT reassign a const value
 
 // Slight exception with objects:
 const person = {
@@ -53,5 +53,5 @@ person = {
 
 // Bottom Line:
 // Always use const unless you know the value is going to change
-// Use lets as much as you can over var, youll likely not see var in industry
+// Use lets as much as you can over var, you'll likely not see var much in industry
 
