@@ -14,12 +14,19 @@ const cats = new Array('Rude', 'Mean', 'Minerva', 'Evil'); // very rarely will s
 console.log(cats[0]); // 'Rude'
 console.log(dogs[1]); // 'Pooch'
 
+// For Loops
+// for(counter variable; condition; incrementer/decrementer) {
+  // doSomething many times here
+//}
+
 // We can loop through an array
-let dogsLength = dogs.length; // 4, built in property to array object
+// Method #1
+let dogsLength = dogs.length; // 4, .length is a built in property to array object
 for(let i = 0; i < dogsLength; i++) {
   console.log(dogs[i]);
 }
 
+// Method #2
 dogs.forEach(doggy => {
   console.log('Dogs Name: ' + doggy + ' is a good doggy');
 });
@@ -27,15 +34,15 @@ dogs.forEach(doggy => {
 // There are 3 super powerful methods that are used very often both in JS and other languages
 
 // Filter
-// Returns a new array object that meet a criteria as specified
+// Returns a new array object of elements that meet the criteria as specified
 // (here if length of each element [kitty] is 4 characters)
 let shortCats = cats.filter(kitty => kitty.length === 4);
-console.log(shortCats);
+console.log(shortCats); // will returns cats in the array whos character length is 4
 
 // Map
 // Performs some operation on each elements of the array
 let goodDogs = dogs.map(doggy => doggy.replace('y', 'ie'));
-console.log(goodDogs);
+console.log(goodDogs); // will return dogs where the y in their name is replaced with ie
 
 // Reduce
 // Reduce gives us a value back, without modifying an original value
@@ -60,7 +67,7 @@ console.log(total); // 30
 // https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d
 
 // On line 15, I noted how length is a property. Not a method. Methods have (), properties are referenced
-// using the dot notation. a.b.c give us the child of a named b, and the child of b named c's value.
+// using the dot notation. ex: a.b.c give us the child of a named b, and the child of b named c's value.
 // JSON
 a: {
   b: {

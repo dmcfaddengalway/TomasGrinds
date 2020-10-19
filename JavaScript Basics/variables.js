@@ -6,9 +6,9 @@
 // to be accessed in the function (as well as any nested functions) and nowhere else.
 // You truly wont see var often, pretty much use let or const from now on.
 var firstName; // Declaration
-var lastName = "McFadden" // Declaration & Iitialisation
-lastName = "O\'Dywer" // Reinitialisation
-var firstName = "Tomás"
+var lastName = "McFadden"; // Declaration & Initialisation
+lastName = "O\'Dywer"; // Reinitialisation
+var firstName = "Tomás";
 
 // 2: let
 // Let has a scope of always being within a block (meaning between {}).
