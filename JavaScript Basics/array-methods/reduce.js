@@ -2,7 +2,7 @@ const euros = [29.76, 41.85, 46.5];
 
 const sum = euros.reduce((total, amount) => total + amount);
 
-console.log(sum); // 118.11
+console.log('€' + sum); // 118.11
 
 // How to use it:
 
@@ -15,10 +15,10 @@ console.log(sum); // 118.11
 
 
 // Same thing but old way of writing
-var euros = [29.76, 41.85, 46.5];
+const dollars = [29.76, 41.85, 46.5];
 
-var sum = euros.reduce(function (total, amount) {
-  return total + amount
+const dollarSum = euros.reduce(function (total, amount) {
+  return total + amount;
 });
 
-console.log(sum); // 118.11
+console.log('$' + dollarSum); // 118.11
