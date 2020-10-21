@@ -8,7 +8,9 @@ Strings are noted by surrounding ' or ". It does not matter which ones you use, 
 
 **Note:** If you require a string to have an apostrophe in it (ex: "O'Dwyer"). You need to somehow 'escape' the apostraphe to let JavaScript know this is not the end of the string, but rather a aprt of the string. We do this by placing a \ in front of the character we want to 'escape'.
 
+```
 O'Dwyer -> "O\'Dwyer"
+```
 
 Above, it is important that we use the backslash before our apostraphe to let JavaScript know that this is part of the string.
 
